@@ -3,6 +3,8 @@ server:
     include-stacktrace: on-param
     
 spring:
+  application:
+    name: springboot2-essencials
   datasource:
     url: jdbc:mysql://localhost:3306/anime?createDatabaseIfNotExist=true
     username: root
@@ -12,3 +14,14 @@ spring:
 logging:  level:    org:
       hibernate:
         SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+
+info:
+  app: Spring Boot Essencial By DevDojo
+  website: https://devdojo.academy
+  github: https://github.com/devdojobr/springboot2-essencials
